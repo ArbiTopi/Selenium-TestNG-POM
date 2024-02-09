@@ -39,7 +39,7 @@ public class ShoppingCartPage {
         for (WebElement price : shoppingCartElements.itemsPrices) {
             String numericPrice = price.getText().replaceAll("[^0-9.]", "");
             total += Double.parseDouble(numericPrice);
-        }
+         }
             String finalPrice = shoppingCartElements.totalPrice.getText().replaceAll("[^0-9.]", "");
             double finalTotalPrice = Double.parseDouble(finalPrice);
         return finalTotalPrice==total;
