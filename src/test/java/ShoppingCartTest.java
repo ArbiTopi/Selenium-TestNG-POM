@@ -1,8 +1,10 @@
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.ShoppingCartPage;
 import utilities.BaseInformation;
+@Listeners(listeners.Listeners.class)
 
 public class ShoppingCartTest {
 

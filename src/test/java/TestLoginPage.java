@@ -3,15 +3,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.SkipException;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.LoginPage;
 import utilities.BaseInformation;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+@Listeners(listeners.Listeners.class)
 
 public class TestLoginPage {
     private final WebDriver driver = BaseInformation.getDriver();

@@ -8,6 +8,7 @@ import org.testng.asserts.SoftAssert;
 import pages.RegisterPage;
 import utilities.BaseInformation;
 import java.time.Duration;
+@Listeners(listeners.Listeners.class)
 
 public class TestRegisterPage {
     SoftAssert softAssert = new SoftAssert();

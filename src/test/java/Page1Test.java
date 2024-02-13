@@ -1,9 +1,11 @@
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.Test1Page;
 import utilities.BaseInformation;
 
+@Listeners(listeners.Listeners.class)
 public class Page1Test {
     private final WebDriver driver = BaseInformation.getDriver();
 
