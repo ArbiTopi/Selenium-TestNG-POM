@@ -12,17 +12,17 @@ public class ShoppingCartTest {
 
     ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
 
-    @Test
+    @Test(priority = 1,groups = {"shopping"},dependsOnGroups = {"dashboard"})
     public void ShoppingCartMenu(){
         shoppingCartPage.hoverCart();
         shoppingCartPage.checkingGoToBtn();
     }
-    @Test
+    @Test(priority = 2,groups = {"shopping"},dependsOnGroups = {"dashboard"})
     public void checkingShoppingPage(){
         Assert.assertTrue(shoppingCartPage.checkingPage(),"Wrong Page");
 
     }
-    @Test
+    @Test(priority = 3,groups = {"shopping"},dependsOnGroups = {"dashboard"})
     public void calculatingPrices(){
         Assert.assertTrue(shoppingCartPage.checkingPrice(),"Prices are different");
     }

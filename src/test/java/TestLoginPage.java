@@ -13,9 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestLoginPage {
     private final WebDriver driver = BaseInformation.getDriver();
-
     boolean testBresults=false;
-
     LoginPage loginPage=new LoginPage();
    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
@@ -32,9 +30,9 @@ public class TestLoginPage {
         loginPage.checkBoxClick();
         loginPage.submitLogin();
     }
-    @Test(priority = 6)
+    @Test(priority = 6,groups = {"verifyLogin"})
     public void verifyLogin(){
-            Assert.assertTrue(loginPage.verifyLogin(),"Logimi shkoji keq");
+\            Assert.assertTrue(loginPage.verifyLogin(),"Logimi shkoji keq");
             testBresults=true;
     }
 
@@ -47,9 +45,5 @@ public class TestLoginPage {
         }
 
 }
-//    @AfterTest
-//    public void termniate(){
-//
-//
-//    }
+
 }

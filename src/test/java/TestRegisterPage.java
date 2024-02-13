@@ -31,16 +31,8 @@ public class TestRegisterPage {
     public void testLoginButton()  {
         registerPage.clickLoginButton();
         registerPage.clickRegisterButtonMenu();
-      //  registerPage.filingPasswordTextBoxes();
-      //  registerPage.submitRegistration();
-//        registerPage.checkConfirmPasswordError();
-//        registerPage.checkPasswordErrors();
-//        registerPage.displayedErrors();
-
-
         softAssert.assertEquals(driver.getTitle(), "nopCommerce demo store. Register", "Title is not Matching");
-//        registerPage.fillForm();
-//        softAssert.assertAll();
+
     }
     @Test(priority = 1)
     public void fillForm(){
@@ -78,6 +70,7 @@ public class TestRegisterPage {
     @AfterTest
     public void endTest(){
         softAssert.assertAll();
+        driver.quit();
     }
 
 }
