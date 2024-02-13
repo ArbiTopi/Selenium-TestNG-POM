@@ -1,51 +1,49 @@
 package pages;
 
-import elements.Test1Elements;
+import elements.DashboardElements;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.BaseInformation;
 
-import java.sql.Struct;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test1Page {
-    public  Test1Page(){
+public class DashboardPage {
+    public DashboardPage(){
         PageFactory.initElements(BaseInformation.getDriver(), this);
     }
-    Test1Elements test1Elements = new Test1Elements();
+    DashboardElements dashboardElements = new DashboardElements();
     Actions actions = new Actions(BaseInformation.getDriver());
     WebDriverWait wait = new WebDriverWait(BaseInformation.getDriver(), Duration.ofSeconds(4));
 
 
 
     public void hoverElectronic(){
-       actions.moveToElement(test1Elements.electronicButton).build().perform();
+       actions.moveToElement(dashboardElements.electronicButton).build().perform();
 
     }
     public void clickCellphones(){
-        if(test1Elements.cellphonesButton.isDisplayed()){
-        test1Elements.cellphonesButton.click();
+        if(dashboardElements.cellphonesButton.isDisplayed()){
+        dashboardElements.cellphonesButton.click();
         }
     }
 
     public boolean  verifyPage(){
 
-        return test1Elements.cellphoneText.getText().equals("Cell phones");
+        return dashboardElements.cellphoneText.getText().equals("Cell phones");
     }
     public void orderProduct(){
-        actions.moveToElement(test1Elements.productOrder).build().perform();
-        test1Elements.lowToHigh.click();
+        actions.moveToElement(dashboardElements.productOrder).build().perform();
+        dashboardElements.lowToHigh.click();
     }
     public boolean verifySortedCPitems() {
              List<Double> prices = new ArrayList<>();
              String priceText = "";
-             for (WebElement element : test1Elements.prices) {
+             for (WebElement element : dashboardElements.prices) {
                  priceText = element.getText().replaceAll("[^0-9.]", ""); // Remove non-numeric characters
                  double price = Double.parseDouble(priceText);
                  prices.add(price);
@@ -60,11 +58,11 @@ public class Test1Page {
              return isSorted;
          }
          public void checkMesage(){
-             wait.until(ExpectedConditions.visibilityOf(test1Elements.sucessMessage));
+             wait.until(ExpectedConditions.visibilityOf(dashboardElements.sucessMessage));
          }
 
          public void addToWishList() throws InterruptedException {
-        for (WebElement in : test1Elements.wishlistButton){
+        for (WebElement in : dashboardElements.wishlistButton){
             WebElement clickableButton =wait.until(ExpectedConditions.elementToBeClickable(in));
             clickableButton.click();
             checkMesage();
@@ -72,21 +70,21 @@ public class Test1Page {
         }
          }
          public boolean wishListNr(){
-        return test1Elements.wishlistQuantity.getText().equals("(3)");
+        return dashboardElements.wishlistQuantity.getText().equals("(3)");
          }
          public void wishlistClick(){
-        test1Elements.wishlistBtn.click();
+        dashboardElements.wishlistBtn.click();
          }
          public void checkingWishlist(){
-        for (WebElement in: test1Elements.wishlistCheckBox){
+        for (WebElement in: dashboardElements.wishlistCheckBox){
             in.click();
         }
          }
          public void addingToCart(){
-        test1Elements.addToCart.click();
+        dashboardElements.addToCart.click();
          }
          public boolean checkingQuantity(){
 
-        return (test1Elements.wishlistQuantity.getText().equals("(0)")&&test1Elements.cartQuantity.getText().equals("(3)"));
+        return (dashboardElements.wishlistQuantity.getText().equals("(0)")&& dashboardElements.cartQuantity.getText().equals("(3)"));
          }
 }

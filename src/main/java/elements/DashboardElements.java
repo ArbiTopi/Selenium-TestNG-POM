@@ -2,15 +2,14 @@ package elements;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import utilities.BaseInformation;
 
 import java.util.List;
 
-public class Test1Elements {
+public class DashboardElements {
 
-    public Test1Elements(){
+    public DashboardElements(){
         PageFactory.initElements(BaseInformation.getDriver(), this);
     }
 
