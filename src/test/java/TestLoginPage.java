@@ -32,7 +32,7 @@ public class TestLoginPage {
     }
     @Test(priority = 6,groups = {"verifyLogin"})
     public void verifyLogin(){
-\            Assert.assertTrue(loginPage.verifyLogin(),"Logimi shkoji keq");
+       Assert.assertTrue(loginPage.verifyLogin(),"Logimi shkoji keq");
             testBresults=true;
     }
 
