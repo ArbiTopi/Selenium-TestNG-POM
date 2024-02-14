@@ -13,17 +13,14 @@ public class DashboardTest {
 
     @Test(priority = 0,groups = {"dashboard"},dependsOnGroups = {"verifyLogin"})
     public void cellPhonePage() throws InterruptedException {
-        Thread.sleep(5000);
         dashboardPage.hoverElectronic();
-        Thread.sleep(5000);
         dashboardPage.clickCellphones();
-        Thread.sleep(5000);
         Assert.assertTrue(dashboardPage.verifyPage(),"Worng Page");
     }
     @Test(priority = 1,groups = {"dashboard"},dependsOnGroups = {"verifyLogin"})
     public void orderPage() throws InterruptedException {
         dashboardPage.orderProduct();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         Assert.assertTrue(dashboardPage.verifySortedCPitems(),"Prices are not sorted");
         dashboardPage.addToWishList();
 
@@ -32,8 +29,8 @@ public class DashboardTest {
 
     @Test(priority = 2,groups = {"dashboard"},dependsOnGroups = {"verifyLogin"})
     public void addWishlist() throws InterruptedException {
-        Thread.sleep(5000);
         Assert.assertTrue(dashboardPage.wishListNr(),"Not the same nr wishlist");
+        Thread.sleep(5000);
 
     }
     @Test(priority = 3,groups = {"dashboard"},dependsOnGroups = {"verifyLogin"})

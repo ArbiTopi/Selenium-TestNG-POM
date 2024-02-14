@@ -66,25 +66,26 @@ public class DashboardPage {
             WebElement clickableButton =wait.until(ExpectedConditions.elementToBeClickable(in));
             clickableButton.click();
             checkMesage();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         }
          }
          public boolean wishListNr(){
         return dashboardElements.wishlistQuantity.getText().equals("(3)");
          }
          public void wishlistClick(){
-        dashboardElements.wishlistBtn.click();
+             WebElement clickableButton= wait.until(ExpectedConditions.elementToBeClickable(dashboardElements.wishlistBtn));
+             clickableButton.click();
          }
+
          public void checkingWishlist(){
         for (WebElement in: dashboardElements.wishlistCheckBox){
-            in.click();
-        }
+            WebElement clickableButton =wait.until(ExpectedConditions.elementToBeClickable(in));
+            clickableButton.click();        }
          }
          public void addingToCart(){
         dashboardElements.addToCart.click();
          }
          public boolean checkingQuantity(){
-
         return (dashboardElements.wishlistQuantity.getText().equals("(0)")&& dashboardElements.cartQuantity.getText().equals("(3)"));
          }
 }
