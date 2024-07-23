@@ -63,7 +63,7 @@
                 <version>3.0.0-M5</version> <!-- Use the latest version available -->
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>Selenium-TestNG-POM\testng.xml</suiteXmlFile>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
