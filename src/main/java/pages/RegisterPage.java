@@ -6,13 +6,14 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
+import org.testng.Assert;
+
 import utilities.BaseInformation;
 
 import java.time.Duration;
 
 public class RegisterPage {
-    SoftAssert softAssert = new SoftAssert();
+
 
     public RegisterPage() {PageFactory.initElements(BaseInformation.getDriver(),this);
     }
@@ -67,9 +68,9 @@ public class RegisterPage {
     public void checkConfirmPasswordError(){
         String errorM=registerPageElements.confirmPasswordError.getText();
         if (registerPageElements.confirmPasswordError.isDisplayed()) {
-            softAssert.assertNotEquals(errorM,"Password is required."
+            Assert.assertNotEquals(errorM,"Password is required."
                     ,"Konfirmimi i passwordit eshte bosh");
-            softAssert.assertNotEquals(errorM,"The password and confirmation password do not match.","Konfirmi i passwordit sesht i njejte");
+            Assert.assertNotEquals(errorM,"The password and confirmation password do not match.","Konfirmi i passwordit sesht i njejte");
 
         }
 
@@ -78,8 +79,8 @@ public class RegisterPage {
        String errorM= registerPageElements.passwordError.getText();
 
         if(registerPageElements.passwordError.isDisplayed()){
-            softAssert.assertNotEquals(errorM,"Password is required.","Empty password textBox");
-            softAssert.assertNotEquals(errorM,"Password must meet the following rules:\n" +
+            Assert.assertNotEquals(errorM,"Password is required.","Empty password textBox");
+            Assert.assertNotEquals(errorM,"Password must meet the following rules:\n" +
                     "must have at least 6 characters","Passwordi ka m pak se 6 shkronja");
             }
         //softAssert.assertAll(); n fund t testit
