@@ -11,7 +11,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 @Listeners(listeners.Listeners.class)
 
-public class TestLoginPage {
+public class LoginPageTest {
     private final WebDriver driver = BaseInformation.getDriver();
     boolean testBresults=false;
     LoginPage loginPage=new LoginPage();

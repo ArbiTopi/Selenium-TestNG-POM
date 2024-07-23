@@ -1,5 +1,4 @@
 import globals.Globals;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.SkipException;
@@ -10,7 +9,7 @@ import utilities.BaseInformation;
 import java.time.Duration;
 @Listeners(listeners.Listeners.class)
 
-public class TestRegisterPage {
+public class RegisterPageTest {
     SoftAssert softAssert = new SoftAssert();
     private final WebDriver driver = BaseInformation.getDriver();
     RegisterPage registerPage = new RegisterPage();
