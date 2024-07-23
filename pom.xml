@@ -47,12 +47,7 @@
             <artifactId>plexus-utils</artifactId>
             <version>3.5.1</version>
         </dependency>
-                 <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.9.0</version>
-            <scope>compile</scope>
-        </dependency>
+
     </dependencies>
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
     <build>
